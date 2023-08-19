@@ -18,7 +18,24 @@ function writePassword() {
 // THEN my input should be validated and at least one character type should be selected
 function generatePassword() {
   let password = "444";
-  console.log("generate password here")
+var length = 8 ; 
+var  hasLowercase = false;
+var  hasUppercase = false;
+var  hasNumeric = false;
+var  hasSpecialCharacters = false;
+
+var atLeastOneCharacterTypeSelected = hasLowercase || hasUppercase || hasNumeric || hasSpecialCharacters ;
+
+if (!atLeastOneCharacterTypeSelected){
+    alert("You did not select at least one character type.")
+}
+
+
+
+
+
+
+
   return password;
 }
 
