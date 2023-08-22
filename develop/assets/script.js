@@ -18,6 +18,7 @@ function generatePassword() {
 
   // make a prompt that asks if they want lowercase
   let hasLowercase = confirm("Do you want lowercase?");
+  
   let hasUppercase= confirm("Do you want uppercase?");
   let hasNumeric = confirm("do you want numbers?");
   let hasSpecialCharacters = confirm("do you want special characters?");
