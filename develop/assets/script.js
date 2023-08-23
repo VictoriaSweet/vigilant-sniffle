@@ -1,6 +1,17 @@
 // Assignment Code
 const generateBtn = document.querySelector("#generate");
 
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+
+function getRandomCharacterFromArray(array) {
+  const index = getRandomInt(array.length); // 0 to (array length - 1)
+  return array[index];
+}
+
 // WHEN prompted for the length of the password
 // THEN I choose a length of at least 8 characters and no more than 128 characters
 // WHEN asked for character types to include in the password
@@ -17,11 +28,36 @@ function generatePassword() {
   const specialCharacters = ['!','@','#','$','%','^','&','*','(',')','/','|','"','.',',','?','<','>'];
 
   // make a prompt that asks if they want lowercase
-  let hasLowercase = confirm("Do you want lowercase?");
+  let hasLowercase = true; // confirm("Do you want lowercase?");
+  let hasUppercase= true; //confirm("Do you want uppercase?");
+  let hasNumeric = true; //confirm("Do you want numbers?");
+  let hasSpecialCharacters = true; //confirm("Do you want special characters?");
+
+  if (hasLowercase) {
+    const letter = getRandomCharacterFromArray(lowercaseCharacters);
+    console.log(letter)
+    console.log(  password.concat(letter))
+    password=password.concat(letter)
+    console.log(password)
   
-  let hasUppercase= confirm("Do you want uppercase?");
-  let hasNumeric = confirm("do you want numbers?");
-  let hasSpecialCharacters = confirm("do you want special characters?");
+  }
+
+  if (hasUppercase) {
+    const letter = getRandomCharacterFromArray(uppercaseCharacters);
+    console.log(letter)
+    console.log(  password.concat(letter))
+    password=password.concat(letter)
+    console.log(password)
+  }
+
+  if (hasNumeric) {
+    const letter = getRandomCharacterFromArray(numericCharacters);
+  }
+
+  if (hasSpecialCharacters) {
+    const letter = getRandomCharacterFromArray(specialCharacters);
+  }
+
 
   const atLeastOneCharacterTypeSelected =
     hasLowercase || hasUppercase || hasNumeric || hasSpecialCharacters;
